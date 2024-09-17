@@ -1,1 +1,1 @@
-export const BASE_API = 'http://localhost:3000/api/v1';
+export const BASE_API = 'https://backend.vericaptcha.live/api/v1';
