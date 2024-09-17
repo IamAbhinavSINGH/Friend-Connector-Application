@@ -3,13 +3,21 @@ import { Home, Users, User, Menu } from 'lucide-react'; // Added Menu icon
 import HomeDetails from "../components/HomeDetails";
 import Suggestions from './Suggestions';
 import Profile from './Profile';
+import { useAuth } from '../hooks/AuthProvider';
+import { useNavigate } from 'react-router-dom';
 
 
 type NavItem = 'Home' | 'Suggestions' | 'Profile';
 
 export default function Dashboard() {
+  const auth = useAuth();
+  const navigate = useNavigate();
   const [activeNav, setActiveNav] = useState<NavItem>('Home');
   const [isNavOpen, setIsNavOpen] = useState(false); // State to toggle mobile navigation
+
+  if(auth.user == null){
+    navigate('/login');
+  }
 
   const renderContent = () => {
     switch (activeNav) {
