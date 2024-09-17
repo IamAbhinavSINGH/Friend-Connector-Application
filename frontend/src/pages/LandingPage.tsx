@@ -1,10 +1,8 @@
 import  AppBar  from '../components/AppBar';
 import { Link } from 'react-router-dom'
 import { ArrowRight } from "lucide-react"
-import { useAuth } from '../hooks/AuthProvider';
 
 const LandingPage = () => {
-  const auth = useAuth();
   return (
     <div className="min-h-screen flex flex-col bg-black text-white">
       <AppBar />
